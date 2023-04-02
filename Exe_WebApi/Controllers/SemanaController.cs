@@ -16,7 +16,8 @@ namespace Exe_WebApi.Controllers
         }
 
 
-        [HttpGet]
+
+ [HttpGet]
         public ActionResult Get()
         {
             return Ok();
@@ -28,6 +29,7 @@ namespace Exe_WebApi.Controllers
         {
             return Ok();
         }
+       
 
         [HttpPost]
         public ActionResult Post([FromBody] SemanaModel semanaModel)

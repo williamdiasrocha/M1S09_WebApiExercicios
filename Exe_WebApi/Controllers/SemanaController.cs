@@ -22,6 +22,12 @@ namespace Exe_WebApi.Controllers
             return Ok();
         }
 
+         [HttpGet]
+        [Route("{id}")]
+        public ActionResult Get([FromRoute] int id)
+        {
+            return Ok();
+        }
 
         [HttpPost]
         public ActionResult Post([FromBody] SemanaModel semanaModel)

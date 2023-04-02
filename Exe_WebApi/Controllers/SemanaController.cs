@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Exe_WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -49,6 +45,24 @@ namespace Exe_WebApi.Controllers
 
             return BadRequest("ID não encontrado!");
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var Id = _semanaContext.Semana.Find(id);
+
+            if (Id == null)
+            {
+                return NotFound();
+            }
+
+            _semanaContext.Semana.Remove(Id);
+            _semanaContext.SaveChanges();
+
+            return NoContent();
+        }
+    
 
     }
 }

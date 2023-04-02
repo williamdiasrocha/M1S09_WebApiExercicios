@@ -38,5 +38,17 @@ namespace Exe_WebApi.Controllers
             return BadRequest("Id deve ser maior que 0");
         }
 
+        [HttpPut]
+        [Route("{id}")]
+        public ActionResult Put([FromBody] SemanaModel semanaModel, [FromRoute] int id)
+        {
+            if (semanaModel.Id == id)
+            {
+                return Ok();
+            }
+
+            return BadRequest("ID não encontrado!");
+        }
+
     }
 }

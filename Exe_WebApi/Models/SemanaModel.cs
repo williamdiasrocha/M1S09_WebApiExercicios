@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Models
 {
+    
     [Table("SEMANA")]
     public class SemanaModel
     {
